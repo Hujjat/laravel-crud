@@ -11,6 +11,6 @@ we use Bootstrap modal window to create,update and delete data.
 
 ## Example Preview
 
-https://ibb.co/bGwryb
-https://ibb.co/f51DBw
+1. https://ibb.co/bGwryb
+2. https://ibb.co/f51DBw
 
