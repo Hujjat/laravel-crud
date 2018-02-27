@@ -70,8 +70,28 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="{{url('category')}}"><i class="fa fa-link"></i> <span>Category</span></a></li>
-      
+        <li><a href="#"><i class="fa fa-file"></i> <span>Posts</span></a></li>
+        
+        @can('isAdmin')
+         <li class="active"><a href="{{url('category')}}"><i class="fa fa-microchip"></i> <span>Category</span></a></li>
+        @endcan
+
+        @can('isAdmin')
+        <li><a href="#"><i class="fa fa-users"></i> <span>Manage User</span></a></li>
+        <li><a href="#"><i class="fa fa-gears"></i> <span>Settings</span></a></li>
+        @endcan
+        <li class="">
+
+           <a href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+             <i class="fa fa-power-off text-red"></i>   <span>Logout</span>
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        </li>
+
       </ul>
       <!-- /.sidebar-menu -->
     </section>

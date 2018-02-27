@@ -20,3 +20,19 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('category','CategoryController');
+
+Route::get('profile', function(){
+    return view('profile');
+});
+
+/* View Composer*/
+View::composer(['*'], function($view){
+    
+    $user = Auth::user();
+    $view->with('user',$user);
+    
+
+    
+
+});
+
